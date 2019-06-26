@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Trebuchet MS';
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,18 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+@font-face {
+    font-family: 'MarcellusSC-Regular';
+    src: url('../fonts/MarcellusSC-Regular.ttf') format('truetype');
+}
+h1 {
+    font-family: MarcellusSC-Regular;
+    /*font-weight: 800;*/
+    color: #264363;
+    font-size: 55px;
+    text-transform: uppercase;
+}
+h2{
+    font-family: 'Century Gothic';
 }

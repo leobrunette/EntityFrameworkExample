@@ -5,10 +5,10 @@
 }
 <div class="container">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-6">
             <h1>All Barrels</h1>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-1">
             <p>
                 @Html.ActionLink("Create", "Add")
             </p>
@@ -16,8 +16,8 @@
         <div class="col-sm-4">
             <!-- SEARCH -->
         </div>
-        <div class="col-sm-2">
-            <!-- BARREL LOGO-->
+        <div class="col-sm-1">
+            <img src="~/Images/barrelLogo.png" width="60" height="60"/>
         </div>
     </div>
     <div class="row">
@@ -25,31 +25,30 @@
             <table class="table">
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.Id)
+                        ID
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Weight)
+                        Weight
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Radius)
+                        Radius
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Height)
+                        Height
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Contents)
+                        Contents
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.CurrentLocation)
+                        Current Location
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.ConstructionMaterial)
+                        Construction Materials
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.DateCreated)
+                        Date Created
                     </th>
                     <th>
-                        
                     </th>
                 </tr>
                 @foreach (var item in Model)
