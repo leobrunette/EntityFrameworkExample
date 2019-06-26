@@ -46,9 +46,11 @@
 			<div class="col-md-4">
 				@{
 					List<SelectListItem> listItems = new List<SelectListItem>();
-					listItems.Add(new SelectListItem{ Text = "AtlantaPort", Value = "AtlantaPort"});
-					listItems.Add(new SelectListItem{ Text = "NewJersyTerminal", Value = "NewJersyTerminal"});
-					listItems.Add(new SelectListItem{ Text = "AWS", Value = "AWS"});
+					listItems.Add(new SelectListItem{ Text = "Wood", Value = "/images/Wood.png"});
+					listItems.Add(new SelectListItem{ Text = "Iron", Value = "/images/Iron.png"});
+					listItems.Add(new SelectListItem{ Text = "Stone", Value = "/images/Stone.png"});
+					listItems.Add(new SelectListItem{ Text = "Obsidian", Value = "/images/Obsidian.png"});
+					listItems.Add(new SelectListItem{ Text = "Diamond", Value = "/images/Diamond.png"});
 				}
 
 				@Html.DropDownListFor(model => model.ConstructionMaterial, listItems, new { @class = "form-control" })
