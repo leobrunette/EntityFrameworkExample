@@ -8,16 +8,18 @@
 <div class="container">
     <div class"row">
         <div class="col-sm-8">
-            Barrel ID: @Model.Id
+            <h1>Barrel ID: @Model.Id</h1>
         </div>
         <div class="col-sm-4">
-
+            @Html.ActionLink("Back", "Index")
         </div>
     </div>
     <div class="row">
         <div class="col-sm-4">
             <div class="row">
-                Weight
+                <h2>
+                    Weight
+                </h2>
             </div>
             <div class="row">
                 @Html.DisplayFor(model => model.Weight)
@@ -25,7 +27,9 @@
         </div>
         <div class="col-sm-4">
             <div class="row">
-                Radius
+                <h2>
+                    Radius
+                </h2>
             </div>
             <div class="row">
                 @Html.DisplayFor(model => model.Radius)
@@ -33,7 +37,9 @@
         </div>
         <div class="col-sm-4">
             <div class="row">
-                Height
+                <h2>
+                    Height
+                </h2>
             </div>
             <div class="row">
                 @Html.DisplayFor(model => model.Height)
@@ -43,7 +49,46 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="row">
-                Materials
+                <div class="col-sm-8">
+                    <h2>
+                        Construction Material
+                    </h2>
+                </div>
+                <div class="col-sm-4">
+                    <!-- MINECRAFT BLOCK-->
+                </div>
+            </div>
+            <div class="row">
+                @Html.DisplayFor(model => model.ConstructionMaterial)
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <h2>
+                    Current Location
+                </h2>
+            </div>
+            <div class="row">
+                @Html.DisplayFor(model => model.CurrentLocation)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <h2>
+                    Contents
+                </h2>
+            </div>
+            <div class="row">
+                <ul>
+                    @foreach (var item in Model.Contents.Replace(" ","").Split(','))
+                    {
+                    <li>
+                        @Html.DisplayFor(modelItem => item)
+                    </li>
+                    }
+                </ul>
             </div>
         </div>
     </div>

@@ -3,53 +3,49 @@
 @{
     ViewBag.Title = "Index";
 }
-<div class="container">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-5">
             <h1>All Barrels</h1>
         </div>
         <div class="col-sm-2">
-            <p>
-                @Html.ActionLink("Create", "Add")
-            </p>
+            @Html.ActionLink("Create", "Add", "BarrelController", null, new {@class="button" })
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <!-- SEARCH -->
         </div>
-        <div class="col-sm-2">
-            <!-- BARREL LOGO-->
+        <div class="col-sm-1">
+            <img src="~/Images/barrel2.png" width="150%"/>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
             <table class="table">
                 <tr>
-                    <th scope-="col">
-                        @Html.DisplayNameFor(model => model.Id)
-                    </th>
-                    <th scope="col">
-                        @Html.DisplayNameFor(model => model.Weight)
-                    </th>
-                    <th scope="col">
-                        @Html.DisplayNameFor(model => model.Radius)
-                    </th>
-                    <th scope="col">
-                        @Html.DisplayNameFor(model => model.Height)
-                    </th>
-                    <th scope="col">
-                        @Html.DisplayNameFor(model => model.Contents)
-                    </th>
-                    <th scope="col">
-                        @Html.DisplayNameFor(model => model.CurrentLocation)
-                    </th>
-                    <th scope="col">
-                        @Html.DisplayNameFor(model => model.ConstructionMaterial)
-                    </th>
-                    <th scope="col">
-                        @Html.DisplayNameFor(model => model.DateCreated)
+                    <th>
+                        ID
                     </th>
                     <th>
-                        
+                        Weight
+                    </th>
+                    <th>
+                        Radius
+                    </th>
+                    <th>
+                        Height
+                    </th>
+                    <th>
+                        Contents
+                    </th>
+                    <th>
+                        Current Location
+                    </th>
+                    <th>
+                        Construction Materials
+                    </th>
+                    <th>
+                        Date Created
+                    </th>
+                    <th>
                     </th>
                 </tr>
                 @foreach (var item in Model)
@@ -88,4 +84,4 @@
             </table>
         </div>
     </div>
-</div>
+
