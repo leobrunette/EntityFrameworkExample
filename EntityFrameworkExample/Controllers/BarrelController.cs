@@ -1,0 +1,95 @@
+﻿using System.Net;
+using System.Web.Mvc;
+using EntityFrameworkExample.Models;
+
+namespace EntityFrameworkExample.Controllers
+{
+    public class BarrelController : Controller
+    {
+        BarrelService service = new BarrelService();
+        // GET: Barrel
+        public ActionResult Index()
+        {
+            return View(Index(true));
+        }
+
+        public ActionResult Index(bool active)
+        {
+            if (active)
+            {
+                return View(service.GetActive());
+            }
+            else
+            {
+                return View(service.GetArchive());
+            }
+        }
+
+        // GET: Barrels/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Barrel barrel = service.Find((int)id);
+            if (barrel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(barrel);
+        }
+
+        // POST: Barrels/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Weight,Radius,Height,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Barrel barrel)
+        {
+            if (ModelState.IsValid)
+            {
+                service.Create(barrel);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(barrel);
+        }
+
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Barrel barrel = service.Find((int)id);
+            if (barrel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(barrel);
+        }
+
+        // POST: Barrels/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Weight,Radius,Height,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Barrel barrel)
+        {
+            if (ModelState.IsValid)
+            {
+                service.Edit(barrel);
+
+                return RedirectToAction("Index");
+            }
+            return View(barrel);
+        }
+    }
+}

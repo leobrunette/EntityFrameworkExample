@@ -1,0 +1,40 @@
+﻿@model EntityFrameworkExample.Models.Barrel
+@{
+                /**/
+
+                ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class"row">
+        <div class="col-sm-12">
+            Barrel ID:
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="row">
+                Weight
+            </div>
+            <div class="row">
+                @Html.DisplayFor(model => model.Weight)
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="row">
+                Radius
+            </div>
+            <div class="row">
+                @Html.DisplayFor(model => model.Radius)
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="row">
+                Height
+            </div>
+            <div class="row">
+                @Html.DisplayFor(model => model.Height)
+            </div>
+        </div>
+    </div>
+</div>
