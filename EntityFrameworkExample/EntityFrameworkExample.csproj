@@ -148,6 +148,8 @@
     <Compile Include="Repository\BarrelRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\EntityFrameworkExample.Data.Context.DataContext.mdf" />
+    <Content Include="App_Data\EntityFrameworkExample.Data.Context.DataContext_log.ldf" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -188,9 +190,7 @@
     <Content Include="Views\Barrel\Edit.cshtml" />
     <Content Include="Views\Barrel\Details.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
