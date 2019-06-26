@@ -15,68 +15,91 @@
 	@using (Html.BeginForm())
 	{
 		@Html.AntiForgeryToken()
-		<div>
-			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-			<div class="row">
-				<div class="form-group">
-					@Html.LabelFor(model => model.Weight, htmlAttributes: new { @class = "control-label col-md-1" })
-					<div class="col-md-3">
-						@Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
-						@Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
-					</div>
-				</div>
-				<div class="form-group">
-					@Html.LabelFor(model => model.Radius, htmlAttributes: new { @class = "control-label col-md-1" })
-					<div class="col-md-3">
-						@Html.EditorFor(model => model.Radius, new { htmlAttributes = new { @class = "form-control" } })
-						@Html.ValidationMessageFor(model => model.Radius, "", new { @class = "text-danger" })
-					</div>
-				</div>
-				<div class="form-group">
-					@Html.LabelFor(model => model.Height, htmlAttributes: new { @class = "control-label col-md-1" })
-					<div class="col-md-3">
-						@Html.EditorFor(model => model.Height, new { htmlAttributes = new { @class = "form-control" } })
-						@Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-group">
-					@Html.LabelFor(model => model.ConstructionMaterial, htmlAttributes: new { @class = "control-label col-md-2" })
-					<div class="col-md-4">
-						@Html.EditorFor(model => model.ConstructionMaterial, new { htmlAttributes = new { @class = "form-control" } })
-						@Html.ValidationMessageFor(model => model.ConstructionMaterial, "", new { @class = "text-danger" })
-					</div>
-				</div>
-				<div class="form-group">
-					@Html.LabelFor(model => model.CurrentLocation, htmlAttributes: new { @class = "control-label col-md-2" })
-					<div class="col-md-4">
-						@Html.EditorFor(model => model.CurrentLocation, new { htmlAttributes = new { @class = "form-control" } })
-						@Html.ValidationMessageFor(model => model.CurrentLocation, "", new { @class = "text-danger" })
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-group">
-					@Html.LabelFor(model => model.Contents, htmlAttributes: new { @class = "control-label col-md-2" })
-					<div class="col-md-10">
-						@Html.EditorFor(model => model.Contents, new { htmlAttributes = new { @class = "form-control" } })
-						@Html.ValidationMessageFor(model => model.Contents, "", new { @class = "text-danger" })
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-md-offset-2 col-md-12">
-					<input type="submit" value="Create" class="btn btn-default" />
-				</div>
-			</div>
-		</div>
+<div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Weight, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Radius, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.Radius, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Radius, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Height, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.Height, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConstructionMaterial, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.ConstructionMaterial, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ConstructionMaterial, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CurrentLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.CurrentLocation, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CurrentLocation, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group dynamic-element" style="display:none">
+            @Html.LabelFor(model => model.Contents, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Contents, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Contents, "", new { @class = "text-danger" })
+            </div>
+            <p class="delete">Remove Contents</p>
+        </div>
+    </div>
+    <div class="form-container">
+        <form class="form-horizontal">
+            <fieldset>
+                <div class="dynamic-stuff">
+                    <!-- Dynamic element will be cloned here -->
+                    <!-- You can call clone function once if you want it to show it a first element-->
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <div class="row">
+                            <p class="add-one">Add Contents</p>
+                        <div class="col-md-5"></div>
+                        <div class="col-md-6">
+                            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Guardar Comisión</button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-12">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
 	}
 </div>
 
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
    //Clone the hidden element and shows it
-   $('.add-one').click(function () {
+    $('.add-one').click(function () {
        $('.dynamic-element').first().clone().appendTo('.dynamic-stuff').show();
        attach_delete();
    });
