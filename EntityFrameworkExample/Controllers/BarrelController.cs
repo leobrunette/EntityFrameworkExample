@@ -10,9 +10,9 @@ namespace EntityFrameworkExample.Controllers
         // GET: Barrel
         public ActionResult Index()
         {
-            return View(Index(true));
+            return (Index(true));
         }
-
+        [HttpPost]
         public ActionResult Index(bool active)
         {
             if (active)
@@ -24,14 +24,7 @@ namespace EntityFrameworkExample.Controllers
                 return View(service.GetArchive());
             }
         }
-
-        // GET: Barrels/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        public ActionResult Details(int? id)
+public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -44,13 +37,20 @@ namespace EntityFrameworkExample.Controllers
             }
             return View(barrel);
         }
+        // GET: Barrels/Create
+        public ActionResult Add()
+        {
+            return View();
+        }
+
+        
 
         // POST: Barrels/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Weight,Radius,Height,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Barrel barrel)
+        public ActionResult Add([Bind(Include = "Id,Weight,Radius,Height,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Barrel barrel)
         {
             if (ModelState.IsValid)
             {
