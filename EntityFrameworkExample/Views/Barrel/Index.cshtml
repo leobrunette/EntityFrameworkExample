@@ -4,13 +4,10 @@
     ViewBag.Title = "Index";
 }
     <div class="row">
-        <div class="col-sm-5">
+        <div class="col-sm-7">
             <h1>All Barrels</h1>
         </div>
-        <div class="col-sm-2">
-            @Html.ActionLink("Create", "Add", "BarrelController", null, new {@class="button" })
-        </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             <!-- SEARCH -->
         </div>
         <div class="col-sm-1">
@@ -45,7 +42,8 @@
                     <th>
                         Date Created
                     </th>
-                    <th>
+                    <th class="text-center">
+                        @Html.ActionLink("Create", "Add", "Barrel", null, new { @class = "button" })
                     </th>
                 </tr>
                 @foreach (var item in Model)
@@ -75,7 +73,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.DateCreated)
                     </td>
-                    <td>
+                    <td align="center">
                         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) | 
                         @Html.ActionLink("Details", "Details", new { id = item.Id })
                     </td>

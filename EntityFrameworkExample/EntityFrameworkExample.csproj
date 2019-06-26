@@ -160,6 +160,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\barrel2.png" />
     <Content Include="Images\barrelLogo.png" />
+    <Content Include="Images\cubeLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\MarcellusSC-Regular.ttf" />
