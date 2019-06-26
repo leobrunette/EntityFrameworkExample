@@ -17,11 +17,11 @@ namespace EntityFrameworkExample.Controllers
         {
             if (active)
             {
-                return View(service.getActive());
+                return View(service.GetActive());
             }
             else
             {
-                return View(service.getArchive());
+                return View(service.GetArchive());
             }
         }
 
