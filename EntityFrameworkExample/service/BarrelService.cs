@@ -1,5 +1,6 @@
 ﻿using EntityFrameworkExample.Models;
 using EntityFrameworkExample.Repository;
+using System.Collections.Generic;
 
 namespace EntityFrameworkExample.Controllers
 {
@@ -12,6 +13,21 @@ namespace EntityFrameworkExample.Controllers
             repo = new BarrelRepository();
         }
 
+        public List<Barrel> GetAll()
+        {
+            return repo.GetAll();
+        }
+
+        public List<Barrel> GetActive()
+        {
+            return repo.GetActive();
+        }
+
+        public List<Barrel> GetArchive()
+        {
+            return repo.GetArchive();
+        }
+
         public void Create(Barrel barrel)
         {
             repo.Create(barrel);
@@ -22,10 +38,6 @@ namespace EntityFrameworkExample.Controllers
             repo.Edit(barrel);
         }
 
-        public void Remove(int? id)
-        {
-            repo.Remove(id);
-        }
         public Barrel Find(int? id)
         {
             return repo.Find(id);
