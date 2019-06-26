@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Web.Mvc;
 using EntityFrameworkExample.Models;
 
@@ -52,6 +53,7 @@ public ActionResult Details(int? id)
         [ValidateAntiForgeryToken]
         public ActionResult Add([Bind(Include = "Id,Weight,Radius,Height,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Barrel barrel)
         {
+            barrel.DateCreated = DateTime.Now;
             if (ModelState.IsValid)
             {
                 service.Create(barrel);
