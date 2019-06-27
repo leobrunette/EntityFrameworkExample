@@ -126,15 +126,28 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BagController.cs" />
     <Compile Include="Controllers\BarrelController.cs" />
     <Compile Include="Controllers\CubeController.cs" />
+    <Compile Include="Data\Configurations\BagConfiguration.cs" />
     <Compile Include="Data\Configurations\CubeConfiguration.cs" />
     <Compile Include="Migrations\201906271629226_Cube.cs" />
     <Compile Include="Migrations\201906271629226_Cube.Designer.cs">
       <DependentUpon>201906271629226_Cube.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906271721153_bag.cs" />
+    <Compile Include="Migrations\201906271721153_bag.Designer.cs">
+      <DependentUpon>201906271721153_bag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906271724054_bag1.cs" />
+    <Compile Include="Migrations\201906271724054_bag1.Designer.cs">
+      <DependentUpon>201906271724054_bag1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bag.cs" />
     <Compile Include="Models\Cube.cs" />
+    <Compile Include="Repository\BagRepository.cs" />
     <Compile Include="Repository\CubeRepository.cs" />
+    <Compile Include="service\BagService.cs" />
     <Compile Include="service\BarrelService.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\Configurations\BarrelConfiguration.cs" />
@@ -173,6 +186,7 @@
     <Content Include="Images\Diamond.png" />
     <Content Include="Images\Iron.png" />
     <Content Include="Images\Obsidian.png" />
+    <Content Include="Images\sackLogo.png" />
     <Content Include="Images\Stone.png" />
     <Content Include="Images\Wood.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -216,6 +230,12 @@
     <Content Include="Views\Cube\IndexInactive.cshtml" />
     <Content Include="Views\Barrel\DetailsInactive.cshtml" />
     <Content Include="Views\Cube\DetailsInactive.cshtml" />
+    <Content Include="Views\Bag\Add.cshtml" />
+    <Content Include="Views\Bag\Details.cshtml" />
+    <Content Include="Views\Bag\Edit.cshtml" />
+    <Content Include="Views\Bag\Index.cshtml" />
+    <Content Include="Views\Bag\IndexInactive.cshtml" />
+    <Content Include="Views\Bag\DetailsInactive.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -237,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906271629226_Cube.resx">
       <DependentUpon>201906271629226_Cube.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906271721153_bag.resx">
+      <DependentUpon>201906271721153_bag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906271724054_bag1.resx">
+      <DependentUpon>201906271724054_bag1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

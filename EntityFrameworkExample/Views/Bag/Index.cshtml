@@ -1,18 +1,18 @@
-﻿@model IEnumerable<EntityFrameworkExample.Models.Barrel>
+﻿@model IEnumerable<EntityFrameworkExample.Models.Bag>
 
 @{
     ViewBag.Title = "Index";
 }
 <div class="row">
     <div class="col-sm-5">
-        <h1>All Barrels</h1>
+        <h1>All Bags</h1>
     </div>
-    <div class="col-sm-6" align="right">
+    <div class="col-sm-6"align="right">
         @Html.ActionLink("All Cubes", "Index", "Cube", null, new { @class = "button button-sm button-nav" })
-        @Html.ActionLink("All Bags", "Index", "Bag", null, new { @class = "button button-sm button-nav" })
+        @Html.ActionLink("All Barrels", "Index", "Barrel", null, new { @class = "button button-sm button-nav" })
     </div>
     <div class="col-sm-1">
-        <img src="~/Images/barrel2.png" width="90" height="85" align="right" />
+        <img src="~/Images/sackLogo.png" width="90" height="85" align="right" />
     </div>
 </div>
     <div class="row">
@@ -27,10 +27,7 @@
                             Weight
                         </th>
                         <th>
-                            Radius
-                        </th>
-                        <th>
-                            Height
+                            Volume
                         </th>
                         <th>
                             Contents
@@ -45,7 +42,7 @@
                             Date Created
                         </th>
                         <th class="text-center">
-                            @Html.ActionLink("Add", "Add", "Barrel", null, new { @class = "button button-sm" })
+                            @Html.ActionLink("Add", "Add", "Bag", null, new { @class = "button button-sm" })
                         </th>
                     </tr>
                 </thead>
@@ -60,10 +57,7 @@
                                 @Html.DisplayFor(modelItem => item.Weight)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Radius)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Height)
+                                @Html.DisplayFor(modelItem => item.Volume)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Contents)
@@ -93,7 +87,7 @@
                     }
                 </tbody>
             </table>
-            @Html.ActionLink("View Inactive", "IndexInactive", "Barrel", null, new { @class = "button button-sm" })
+            @Html.ActionLink("View Inactive", "IndexInactive", "Bag", null, new { @class = "button button-sm" })
         </div>
     </div>
 <script>
