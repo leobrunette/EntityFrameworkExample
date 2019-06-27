@@ -1,0 +1,116 @@
+﻿@model EntityFrameworkExample.Models.Barrel
+@{
+                /**/
+
+                ViewBag.Title = "Details";
+}
+
+    <div class"row">
+        <div class="col-sm-10" align="left">
+            <h1>Barrel ID: # @Model.Id</h1>
+        </div>
+        <div class="col-sm-2">
+            @Html.ActionLink("Back", "Index", "Barrel", null, new { @class = "button button-red button-sm" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>
+                        Weight
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    @Html.DisplayFor(model => model.Weight)
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>
+                        Radius
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    @Html.DisplayFor(model => model.Radius)
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>
+                        Height
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    @Html.DisplayFor(model => model.Height)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>
+                        Construction Material
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    @Model.ConstructionMaterial.Substring(8).Replace(".png", "")
+                </div>
+                <div class="col-sm-6">
+                    <img src="@Model.ConstructionMaterial" alt="@Model.ConstructionMaterial" width="10%" align="left" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <h2>
+                    Current Location
+                </h2>
+            </div>
+            <div class="row">
+                @Html.DisplayFor(model => model.CurrentLocation)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>
+                        Contents
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    @Model.Contents
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-sm-12" align="center">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Archive" class="button button-sm button-red" />
+            </div>
+        }
+    </div>
+</div>

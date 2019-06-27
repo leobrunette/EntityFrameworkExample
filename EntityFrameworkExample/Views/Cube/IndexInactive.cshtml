@@ -1,0 +1,110 @@
+﻿@model IEnumerable<EntityFrameworkExample.Models.Cube>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="row">
+    <div class="col-sm-5">
+        <h1>All Cubes</h1>
+    </div>
+    <div class="col-sm-6"align="right">
+        @Html.ActionLink("All Barrels", "Index", "Barrel", null, new { @class = "button button-nav button-sm" })
+        @Html.ActionLink("All Bags", "Index", "Bag", null, new { @class = "button button-sm button-nav" })
+    </div>
+    <div class="col-sm-1">
+        <img src="~/Images/crateLogo.png" width="80" height="75" align="right"/>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table id="dataTable" class="table table-striped table-bordered table-sm">
+                <thead>
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Weight
+                        </th>
+                        <th>
+                            Side Length
+                        </th>
+                        <th>
+                            Contents
+                        </th>
+                        <th>
+                            Current Location
+                        </th>
+                        <th>
+                            Construction Materials
+                        </th>
+                        <th>
+                            Date Created
+                        </th>
+                        <th class="text-center">
+                            @Html.ActionLink("Add", "Add", "Cube", null, new { @class = "button button-sm" })
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Weight)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SideLength)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contents)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CurrentLocation)
+                            </td>
+                            <td>
+                                @if (item.ConstructionMaterial != null)
+                                {
+                                    @item.ConstructionMaterial.Substring(8).Replace(".png", "")
+                                    <img src="@item.ConstructionMaterial" alt="@item.ConstructionMaterial" width="10%" align="right" />
+                                }
+                                else
+                                {
+                                    @Html.DisplayFor(modelItem => item.ConstructionMaterial)
+                                }
+                            </td>
+                            <td align="center">
+                                @item.DateCreated.ToShortDateString()
+                            </td>
+                            <td align="center">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Details", "DetailsInactive", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @Html.ActionLink("View Active", "Index", "Cube", null, new { @class = "button button-sm" })
+
+        </div>
+    </div>
+<script>
+	$(document).ready(function() {
+		$('#dataTable').DataTable( {
+			"order": [[ 3, "desc" ]]
+		} );
+	});
+
+	$(document).ready(function(){
+		$("#myInput").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$("#dataTable tr").filter(function() {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+</script>
+
