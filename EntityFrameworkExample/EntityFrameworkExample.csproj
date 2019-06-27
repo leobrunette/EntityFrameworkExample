@@ -169,7 +169,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\barrel2.png" />
     <Content Include="Images\barrelLogo.png" />
-    <Content Include="Images\crateLogo.png" />
     <Content Include="Images\cubeLogo.png" />
     <Content Include="Images\Diamond.png" />
     <Content Include="Images\Iron.png" />
@@ -212,6 +211,8 @@
     <Content Include="Views\Cube\Details.cshtml" />
     <Content Include="Views\Cube\Edit.cshtml" />
     <Content Include="Views\Cube\Index.cshtml" />
+    <Content Include="Views\Barrel\IndexInactive.cshtml" />
+    <Content Include="Views\Cube\IndexInactive.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

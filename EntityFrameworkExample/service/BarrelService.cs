@@ -25,7 +25,12 @@ namespace EntityFrameworkExample.Controllers
 
         public List<Barrel> GetArchive()
         {
-            return repo.GetArchive();
+            List<Barrel> list = repo.GetArchive();
+            for(int i = 0; i < list.Count; i++)
+            {
+                list[i].Weight *= -1;
+            }
+            return list;
         }
 
         public void Create(Barrel barrel)
