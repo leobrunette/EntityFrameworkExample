@@ -70,8 +70,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12">
-                    @Html.DisplayFor(model => model.ConstructionMaterial)
+                <div class="col-sm-6">
+                    @Model.ConstructionMaterial.Substring(8).Replace(".png", "")
+                </div>
+                <div class="col-sm-6">
+                    <img src="@Model.ConstructionMaterial" alt="@Model.ConstructionMaterial" width="10%" align="left" />
                 </div>
             </div>
         </div>
