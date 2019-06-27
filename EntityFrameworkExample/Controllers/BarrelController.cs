@@ -64,7 +64,7 @@ public ActionResult Details(int? id)
             {
                 service.Create(barrel);
 
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
             }
 
             return View(barrel);
