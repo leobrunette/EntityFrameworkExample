@@ -186,6 +186,7 @@
     <Content Include="Images\Diamond.png" />
     <Content Include="Images\Iron.png" />
     <Content Include="Images\Obsidian.png" />
+    <Content Include="Images\sackLogo.png" />
     <Content Include="Images\Stone.png" />
     <Content Include="Images\Wood.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -229,10 +230,13 @@
     <Content Include="Views\Cube\IndexInactive.cshtml" />
     <Content Include="Views\Barrel\DetailsInactive.cshtml" />
     <Content Include="Views\Cube\DetailsInactive.cshtml" />
+    <Content Include="Views\Bag\Add.cshtml" />
+    <Content Include="Views\Bag\Details.cshtml" />
+    <Content Include="Views\Bag\Edit.cshtml" />
+    <Content Include="Views\Bag\Index.cshtml" />
+    <Content Include="Views\Bag\IndexInactive.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Bag\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
