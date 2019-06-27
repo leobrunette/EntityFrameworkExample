@@ -235,6 +235,7 @@
     <Content Include="Views\Bag\Edit.cshtml" />
     <Content Include="Views\Bag\Index.cshtml" />
     <Content Include="Views\Bag\IndexInactive.cshtml" />
+    <Content Include="Views\Bag\DetailsInactive.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
