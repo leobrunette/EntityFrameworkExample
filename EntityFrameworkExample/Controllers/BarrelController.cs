@@ -25,7 +25,8 @@ namespace EntityFrameworkExample.Controllers
                 return View(service.GetArchive());
             }
         }
-public ActionResult Details(int? id)
+        
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -98,6 +99,27 @@ public ActionResult Details(int? id)
                 return RedirectToAction("Index");
             }
             return View(barrel);
+        }
+
+        [HttpPost, ActionName("Details")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ArchiveConfirmed(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Barrel barrel = service.Find((int)id);
+            if (barrel == null)
+            {
+                return HttpNotFound();
+            }
+
+            barrel.Weight *= -1;
+
+            service.Edit(barrel);
+
+            return RedirectToAction("Index");
         }
     }
 }
