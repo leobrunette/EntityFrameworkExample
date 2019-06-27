@@ -102,3 +102,15 @@
             </div>
         </div>
     </div>
+<div class="row">
+    <div class="col-sm-12" align="center">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Archive" class="button button-sm button-red" />
+            </div>
+        }
+    </div>
+</div>
