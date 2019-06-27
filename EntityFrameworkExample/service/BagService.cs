@@ -48,7 +48,12 @@ namespace EntityFrameworkExample.service
         public Bag Find(int? id)
         {
             return repo.Find(id);
-
+        }
+        public Bag FindInactive(int? id)
+        {
+            Bag bar = repo.Find(id);
+            bar.Weight *= -1;
+            return bar;
         }
     }
 }
