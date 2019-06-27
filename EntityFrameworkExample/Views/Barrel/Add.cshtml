@@ -15,7 +15,7 @@
 	@using (Html.BeginForm())
 	{
 		@Html.AntiForgeryToken()
-<div>
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="row">
         <div class="form-group">
@@ -72,16 +72,24 @@
     </div>
     <div class="row">
         <div class="form-group">
-            @Html.LabelFor(model => model.ConstructionMaterial, htmlAttributes: new { @class = "control-label col-md-2" })
-			<div class="col-md-4">
-				@{
-					List<SelectListItem> listItems = new List<SelectListItem>();
-					listItems.Add(new SelectListItem{ Text = "Wood", Value = "/Images/Wood.png"});
-					listItems.Add(new SelectListItem{ Text = "Iron", Value = "/Images/Iron.png"});
-					listItems.Add(new SelectListItem{ Text = "Stone", Value = "/Images/Stone.png"});
-					listItems.Add(new SelectListItem{ Text = "Obsidian", Value = "/Images/Obsidian.png"});
-					listItems.Add(new SelectListItem{ Text = "Diamond", Value = "/Images/Diamond.png"});
-				}
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>
+                            Construction Material
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        @{
+                            List<SelectListItem> listItems = new List<SelectListItem>();
+                            listItems.Add(new SelectListItem { Text = "Wood", Value = "/Images/Wood.png" });
+                            listItems.Add(new SelectListItem { Text = "Iron", Value = "/Images/Iron.png" });
+                            listItems.Add(new SelectListItem { Text = "Stone", Value = "/Images/Stone.png" });
+                            listItems.Add(new SelectListItem { Text = "Obsidian", Value = "/Images/Obsidian.png" });
+                            listItems.Add(new SelectListItem { Text = "Diamond", Value = "/Images/Diamond.png" });
+                        }
 
                         @Html.DropDownListFor(model => model.ConstructionMaterial, listItems, new { @class = "form-control" })
                     </div>
@@ -105,6 +113,7 @@
                 </div>
             </div>
         </div>
+    </div>
     <div class="row">
         <div class="form-group dynamic-element" style="display:none">
             @Html.LabelFor(model => model.Contents, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -136,8 +145,6 @@
             </fieldset>
         </form>
     </div>
-</div>
-</div>
 	}
 
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

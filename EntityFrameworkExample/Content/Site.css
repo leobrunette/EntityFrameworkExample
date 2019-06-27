@@ -58,9 +58,9 @@ h2{
     color: #264363;
     text-decoration: none;
 }
-.table > tbody > tr > th{
+.table > thead > tr > th{
     vertical-align: middle;
-    font-size: 17px;
+    font-size: 16px;
 }
 .button-sm {
     padding: 10px 24px;
@@ -77,5 +77,16 @@ h2{
     color: #d9534f;
 }
 .table > tbody > tr > td{
-    font-size: 15px;
+    font-size: 14px;
+}
+.paginate_button {
+    font-size: small;
+    font-family: 'Century Gothic';
+    cursor: pointer;
+}
+footer{
+    font-size: small;
+}
+#dataTable_info{
+    font-size:small;
 }
