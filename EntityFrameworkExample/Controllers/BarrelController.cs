@@ -54,6 +54,12 @@ public ActionResult Details(int? id)
         public ActionResult Add([Bind(Include = "Id,Weight,Radius,Height,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Barrel barrel)
         {
             barrel.DateCreated = DateTime.Now;
+
+            if(barrel.Contents == null)
+            {
+                barrel.Contents = "";
+            }
+
             if (ModelState.IsValid)
             {
                 service.Create(barrel);
