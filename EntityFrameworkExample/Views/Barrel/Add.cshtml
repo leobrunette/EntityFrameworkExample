@@ -113,72 +113,35 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!--Start-->
-    @Html.LabelFor(model => model.Contents, htmlAttributes: new { @class = "control-label col-md-2" })
-
-    <div class="row" id="content1">
-        <div class="form-group dynamic-element">
-            <div class="col-md-10">
-                <input class="form-control" name="contents" id="input1" />
-            </div>
-        </div>
-        <div class="row" id="add1">
-            <p onclick="showContents(2),hideAdd(1)">Add more Contents</p>
-        </div>
-    </div>
-
-    <div class="row" id="content2">
-        <div class="form-group dynamic-element">
-            <div class="col-md-10">
-                <input class="form-control" id="input2" />
-                <p id="delete2" onclick="hideContents(2),showAdd(1)">Remove Contents</p>
-            </div>
-        </div>
-        <div class="row" id="add2">
-            <p onclick="showContents(3),hideAdd(2)">Add more Contents</p>
-        </div>
-    </div>
-
-    <div class="row" id="content3">
-        <div class="form-group dynamic-element">
-            <div class="col-md-10">
-                <input id="input3" class="form-control" />
-                <p id="delete2" onclick="hideContents(2),showAdd(1)">Remove Contents</p>
-            </div>
-        </div>
-        <div class="row" id="add3">
-            <p onclick="showContents(4),hideAdd(3)">Add more Contents</p>
-        </div>
-    </div>
-    <div class="row" id="content4">
-        <div class="form-group dynamic-element">
-            <div class="col-md-10">
-                <input id="input4" class="form-control" />
-                <p id="delete2" onclick="hideContents(4),showAdd(3)">Remove Contents</p>
-            </div>
-        </div>
-        <div class="row" id="add4">
-            <p onclick="showContents(5),hideAdd(4)">Add more Contents</p>
-        </div>
-    </div>
-    <div class="row" id="content5">
-        <div class="form-group dynamic-element">
-            <div class="col-md-10">
-                <input id="input5" class="form-control" />
-                <p id="delete2" onclick="hideContents(5),showAdd(4)">Remove Contents</p>
+        <div class="form-group">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>
+                            Contents
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        @Html.EditorFor(model => model.Contents, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Contents, "", new { @class = "text-danger" })
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    
 
 
 
     <!--End-->
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-12">
-            <input onclick="submitt()" value="Create" class="btn btn-default" />
+        <div class="row">
+            <div class="col-sm-12" align="center">
+                <input type="submit" value="Add" class="button button-sm" />
+            </div>
         </div>
     </div>
     }
