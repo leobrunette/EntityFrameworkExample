@@ -127,6 +127,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BarrelController.cs" />
+    <Compile Include="Controllers\CubeController.cs" />
+    <Compile Include="Data\Configurations\CubeConfiguration.cs" />
+    <Compile Include="Migrations\201906271629226_Cube.cs" />
+    <Compile Include="Migrations\201906271629226_Cube.Designer.cs">
+      <DependentUpon>201906271629226_Cube.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cube.cs" />
+    <Compile Include="Repository\CubeRepository.cs" />
     <Compile Include="service\BarrelService.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\Configurations\BarrelConfiguration.cs" />
@@ -146,6 +154,7 @@
     <Compile Include="Models\ExampleEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BarrelRepository.cs" />
+    <Compile Include="service\CubeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\EntityFrameworkExample.Data.Context.DataContext.mdf" />
@@ -158,8 +167,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\barrel2.png" />
+    <Content Include="Images\barrelLogo.png" />
+    <Content Include="Images\cubeLogo.png" />
+    <Content Include="Images\Diamond.png" />
+    <Content Include="Images\Iron.png" />
+    <Content Include="Images\Obsidian.png" />
+    <Content Include="Images\Stone.png" />
+    <Content Include="Images\Wood.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\MarcellusSC-Regular.ttf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -171,6 +189,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Site.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -189,6 +208,12 @@
     <Content Include="Views\Barrel\Add.cshtml" />
     <Content Include="Views\Barrel\Edit.cshtml" />
     <Content Include="Views\Barrel\Details.cshtml" />
+    <Content Include="Views\Cube\Add.cshtml" />
+    <Content Include="Views\Cube\Details.cshtml" />
+    <Content Include="Views\Cube\Edit.cshtml" />
+    <Content Include="Views\Cube\Index.cshtml" />
+    <Content Include="Views\Barrel\IndexInactive.cshtml" />
+    <Content Include="Views\Cube\IndexInactive.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -207,6 +232,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906261448392_Barrel.resx">
       <DependentUpon>201906261448392_Barrel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906271629226_Cube.resx">
+      <DependentUpon>201906271629226_Cube.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

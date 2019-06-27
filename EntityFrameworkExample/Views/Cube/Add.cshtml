@@ -1,4 +1,4 @@
-﻿@model EntityFrameworkExample.Models.Barrel
+﻿@model EntityFrameworkExample.Models.Cube
 
 @{
     ViewBag.Title = "Add";
@@ -9,7 +9,7 @@
 			<h1>Add</h1>
 		</div>
 		<div class="col-sm-2">
-			@Html.ActionLink("Back", "Index", "Barrel", null, new { @class = "button button-red button-sm" })
+			@Html.ActionLink("Back", "Index", "Cube", null, new { @class = "button button-red button-sm" })
 		</div>
 	</div>
 	@using (Html.BeginForm())
@@ -40,31 +40,14 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <h2>
-                            Radius
+                            Side Length
                         </h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        @Html.EditorFor(model => model.Radius, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Radius, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-4">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h2>
-                            Height
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        @Html.EditorFor(model => model.Height, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.SideLength, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SideLength, "", new { @class = "text-danger" })
                     </div>
                 </div>
             </div>

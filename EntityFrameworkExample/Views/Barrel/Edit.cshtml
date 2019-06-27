@@ -1,7 +1,167 @@
-﻿
+﻿@model EntityFrameworkExample.Models.Barrel
+
 @{
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<div class="row">
+    <div class="col-sm-10">
+        <h1>Edit</h1>
+    </div>
+    <div class="col-sm-2">
+        @Html.ActionLink("Back", "Index", "Barrel", null, new { @class = "button button-red button-sm" })
+    </div>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="row">
+        <div class="form-group">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>
+                            Weight
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>
+                            Radius
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        @Html.EditorFor(model => model.Radius, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Radius, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>
+                            Height
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        @Html.EditorFor(model => model.Height, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>
+                            Construction Material
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        @{
+                            List<SelectListItem> listItems = new List<SelectListItem>();
+                            listItems.Add(new SelectListItem { Text = "Wood", Value = "/Images/Wood.png" });
+                            listItems.Add(new SelectListItem { Text = "Iron", Value = "/Images/Iron.png" });
+                            listItems.Add(new SelectListItem { Text = "Stone", Value = "/Images/Stone.png" });
+                            listItems.Add(new SelectListItem { Text = "Obsidian", Value = "/Images/Obsidian.png" });
+                            listItems.Add(new SelectListItem { Text = "Diamond", Value = "/Images/Diamond.png" });
+                        }
+
+                        @Html.DropDownListFor(model => model.ConstructionMaterial, listItems, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>
+                            Current Location
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        @Html.EditorFor(model => model.CurrentLocation, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CurrentLocation, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>
+                            Contents
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        @Html.EditorFor(model => model.Contents, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Contents, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>
+                            Date Created
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        @Html.EditorFor(model => model.DateCreated, new { htmlAttributes = new { @class = "form-control", @readonly="readonly" } })
+                        @Html.ValidationMessageFor(model => model.DateCreated, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--End-->
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-12" align="center">
+                <input type="submit" value="Add" class="button button-sm" />
+            </div>
+        </div>
+    </div>
+}
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 

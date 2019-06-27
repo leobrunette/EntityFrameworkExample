@@ -1,19 +1,22 @@
-﻿using System;
+﻿using EntityFrameworkExample.Models;
+using EntityFrameworkExample.service;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
-using EntityFrameworkExample.Models;
 
 namespace EntityFrameworkExample.Controllers
 {
-    public class BarrelController : Controller
+    public class CubeController : Controller
     {
-        BarrelService service = new BarrelService();
-        // GET: Barrel
+        CubeService service = new CubeService();
+        // GET: Cube
         public ActionResult Index()
         {
             return (Index(true));
         }
-
         public ActionResult IndexInactive()
         {
             return (Index(false));
@@ -30,50 +33,50 @@ namespace EntityFrameworkExample.Controllers
                 return View(service.GetArchive());
             }
         }
-        
+
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Barrel barrel = service.Find((int)id);
-            if (barrel == null)
+            Cube cube = service.Find((int)id);
+            if (cube == null)
             {
                 return HttpNotFound();
             }
-            return View(barrel);
+            return View(cube);
         }
-        // GET: Barrels/Create
+        // GET: Cubes/Create
         public ActionResult Add()
         {
             return View();
         }
 
-        
 
-        // POST: Barrels/Create
+
+        // POST: Cubes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add([Bind(Include = "Id,Weight,Radius,Height,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Barrel barrel)
+        public ActionResult Add([Bind(Include = "Id,Weight,SideLength,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Cube cube)
         {
-            barrel.DateCreated = DateTime.Now;
+            cube.DateCreated = DateTime.Now;
 
-            if(barrel.Contents == null)
+            if (cube.Contents == null)
             {
-                barrel.Contents = "";
+                cube.Contents = "";
             }
 
             if (ModelState.IsValid)
             {
-                service.Create(barrel);
+                service.Create(cube);
 
                 return RedirectToAction("Index");
             }
 
-            return View(barrel);
+            return View(cube);
         }
 
         public ActionResult Edit(int? id)
@@ -82,28 +85,28 @@ namespace EntityFrameworkExample.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Barrel barrel = service.Find((int)id);
-            if (barrel == null)
+            Cube cube = service.Find((int)id);
+            if (cube == null)
             {
                 return HttpNotFound();
             }
-            return View(barrel);
+            return View(cube);
         }
 
-        // POST: Barrels/Edit/5
+        // POST: Cubes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Weight,Radius,Height,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Barrel barrel)
+        public ActionResult Edit([Bind(Include = "Id,Weight,SideLength,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Cube cube)
         {
             if (ModelState.IsValid)
             {
-                service.Edit(barrel);
+                service.Edit(cube);
 
                 return RedirectToAction("Index");
             }
-            return View(barrel);
+            return View(cube);
         }
 
         [HttpPost, ActionName("Details")]
@@ -114,15 +117,15 @@ namespace EntityFrameworkExample.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Barrel barrel = service.Find((int)id);
-            if (barrel == null)
+            Cube cube = service.Find((int)id);
+            if (cube == null)
             {
                 return HttpNotFound();
             }
 
-            barrel.Weight *= -1;
+            cube.Weight *= -1;
 
-            service.Edit(barrel);
+            service.Edit(cube);
 
             return RedirectToAction("Index");
         }
