@@ -51,5 +51,12 @@ namespace EntityFrameworkExample.service
             return repo.Find(id);
 
         }
+        public Cube FindInactive(int? id)
+        {
+            Cube bar = repo.Find(id);
+            bar.Weight *= -1;
+            return bar;
+
+        }
     }
 }
