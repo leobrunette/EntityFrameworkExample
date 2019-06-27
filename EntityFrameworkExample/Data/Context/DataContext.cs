@@ -12,6 +12,7 @@ namespace EntityFrameworkExample.Data.Context
     {
         public DbSet<Barrel> Barrels { get; set; }
         public DbSet<Cube> Cubes { get; set; }
+        public DbSet<Bag> Bags { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -21,6 +22,7 @@ namespace EntityFrameworkExample.Data.Context
             modelBuilder.Configurations.Add(new ExampleChildEntityConfiguration());
             modelBuilder.Configurations.Add(new BarrelConfiguration());
             modelBuilder.Configurations.Add(new CubeConfiguration());
+            modelBuilder.Configurations.Add(new BagConfiguration());
         }
     }
 }

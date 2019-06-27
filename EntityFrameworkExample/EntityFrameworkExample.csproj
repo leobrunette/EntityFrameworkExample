@@ -126,15 +126,28 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BagController.cs" />
     <Compile Include="Controllers\BarrelController.cs" />
     <Compile Include="Controllers\CubeController.cs" />
+    <Compile Include="Data\Configurations\BagConfiguration.cs" />
     <Compile Include="Data\Configurations\CubeConfiguration.cs" />
     <Compile Include="Migrations\201906271629226_Cube.cs" />
     <Compile Include="Migrations\201906271629226_Cube.Designer.cs">
       <DependentUpon>201906271629226_Cube.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906271721153_bag.cs" />
+    <Compile Include="Migrations\201906271721153_bag.Designer.cs">
+      <DependentUpon>201906271721153_bag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906271724054_bag1.cs" />
+    <Compile Include="Migrations\201906271724054_bag1.Designer.cs">
+      <DependentUpon>201906271724054_bag1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bag.cs" />
     <Compile Include="Models\Cube.cs" />
+    <Compile Include="Repository\BagRepository.cs" />
     <Compile Include="Repository\CubeRepository.cs" />
+    <Compile Include="service\BagService.cs" />
     <Compile Include="service\BarrelService.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\Configurations\BarrelConfiguration.cs" />
@@ -215,7 +228,9 @@
     <Content Include="Views\Barrel\IndexInactive.cshtml" />
     <Content Include="Views\Cube\IndexInactive.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Bag\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -235,6 +250,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906271629226_Cube.resx">
       <DependentUpon>201906271629226_Cube.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906271721153_bag.resx">
+      <DependentUpon>201906271721153_bag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906271724054_bag1.resx">
+      <DependentUpon>201906271724054_bag1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
