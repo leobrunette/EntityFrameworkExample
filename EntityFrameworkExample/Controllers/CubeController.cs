@@ -56,7 +56,7 @@ namespace EntityFrameworkExample.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add([Bind(Include = "Id,Weight,Radius,Height,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Cube cube)
+        public ActionResult Add([Bind(Include = "Id,Weight,SideLength,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Cube cube)
         {
             cube.DateCreated = DateTime.Now;
 
