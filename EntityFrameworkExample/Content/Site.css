@@ -1,7 +1,9 @@
 ﻿body {
     padding-top: 0px;
     padding-bottom: 20px;
-    font-family: 'Trebuchet MS';
+    font-family: 'Century Gothic';
+    font-size: 20px;
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -58,8 +60,22 @@ h2{
 }
 .table > tbody > tr > th{
     vertical-align: middle;
+    font-size: 17px;
 }
 .button-sm {
     padding: 10px 24px;
     font-size: small;
+    vertical-align: middle;
+}
+.button-red{
+    background-color: #d9534f;
+    border-color: #d9534f;
+    vertical-align: middle;
+    margin-top: 15%;
+}
+.button-red:hover{
+    color: #d9534f;
+}
+.table > tbody > tr > td{
+    font-size: 15px;
 }

@@ -5,44 +5,55 @@
                 ViewBag.Title = "Details";
 }
 
-<div class="container">
     <div class"row">
-        <div class="col-sm-8">
-            <h1>Barrel ID: @Model.Id</h1>
+        <div class="col-sm-10" align="left">
+            <h1>Barrel ID: # @Model.Id</h1>
         </div>
-        <div class="col-sm-4">
-            @Html.ActionLink("Back", "Index")
+        <div class="col-sm-2">
+            @Html.ActionLink("Back", "Index", "Barrel", null, new { @class = "button button-red button-sm" })
         </div>
     </div>
     <div class="row">
         <div class="col-sm-4">
             <div class="row">
-                <h2>
-                    Weight
-                </h2>
+                <div class="col-sm-12">
+                    <h2>
+                        Weight
+                    </h2>
+                </div>
             </div>
             <div class="row">
-                @Html.DisplayFor(model => model.Weight)
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="row">
-                <h2>
-                    Radius
-                </h2>
-            </div>
-            <div class="row">
-                @Html.DisplayFor(model => model.Radius)
+                <div class="col-sm-12">
+                    @Html.DisplayFor(model => model.Weight)
+                </div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="row">
-                <h2>
-                    Height
-                </h2>
+                <div class="col-sm-12">
+                    <h2>
+                        Radius
+                    </h2>
+                </div>
             </div>
             <div class="row">
-                @Html.DisplayFor(model => model.Height)
+                <div class="col-sm-12">
+                    @Html.DisplayFor(model => model.Radius)
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>
+                        Height
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    @Html.DisplayFor(model => model.Height)
+                </div>
             </div>
         </div>
     </div>
@@ -59,7 +70,9 @@
                 </div>
             </div>
             <div class="row">
-                @Html.DisplayFor(model => model.ConstructionMaterial)
+                <div class="col-sm-12">
+                    @Html.DisplayFor(model => model.ConstructionMaterial)
+                </div>
             </div>
         </div>
         <div class="col-sm-6">
@@ -76,20 +89,18 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="row">
-                <h2>
-                    Contents
-                </h2>
+                <div class="col-sm-12">
+                    <h2>
+                        Contents
+                    </h2>
+                </div>
             </div>
             <div class="row">
-                <ul>
-                    @foreach (var item in Model.Contents.Replace(" ","").Split(','))
-                    {
-                    <li>
-                        @Html.DisplayFor(modelItem => item)
-                    </li>
-                    }
-                </ul>
+                <div class="col-sm-12">
+                    <ul>
+
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
