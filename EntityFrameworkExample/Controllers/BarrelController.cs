@@ -44,6 +44,20 @@ namespace EntityFrameworkExample.Controllers
             }
             return View(barrel);
         }
+
+        public ActionResult DetailsInactive(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Barrel barrel = service.FindInactive((int)id);
+            if (barrel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(barrel);
+        }
         // GET: Barrels/Create
         public ActionResult Add()
         {
@@ -125,6 +139,26 @@ namespace EntityFrameworkExample.Controllers
             service.Edit(barrel);
 
             return RedirectToAction("Index");
+        }
+        [HttpPost, ActionName("DetailsInactive")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ArchiveConfirmedx(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Barrel barrel = service.Find((int)id);
+            if (barrel == null)
+            {
+                return HttpNotFound();
+            }
+
+            barrel.Weight *= -1;
+
+            service.Edit(barrel);
+
+            return RedirectToAction("IndexInactive");
         }
     }
 }

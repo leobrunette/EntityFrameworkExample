@@ -48,5 +48,12 @@ namespace EntityFrameworkExample.Controllers
             return repo.Find(id);
 
         }
+        public Barrel FindInactive(int? id)
+        {
+            Barrel bar= repo.Find(id);
+            bar.Weight *= -1;
+            return bar;
+
+        }
     }
 }

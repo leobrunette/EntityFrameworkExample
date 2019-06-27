@@ -214,6 +214,8 @@
     <Content Include="Views\Cube\Index.cshtml" />
     <Content Include="Views\Barrel\IndexInactive.cshtml" />
     <Content Include="Views\Cube\IndexInactive.cshtml" />
+    <Content Include="Views\Barrel\DetailsInactive.cshtml" />
+    <Content Include="Views\Cube\DetailsInactive.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

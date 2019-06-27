@@ -47,6 +47,20 @@ namespace EntityFrameworkExample.Controllers
             }
             return View(cube);
         }
+
+        public ActionResult DetailsInactive(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Cube cube = service.FindInactive((int)id);
+            if (cube == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cube);
+        }
         // GET: Cubes/Create
         public ActionResult Add()
         {
@@ -112,6 +126,27 @@ namespace EntityFrameworkExample.Controllers
         [HttpPost, ActionName("Details")]
         [ValidateAntiForgeryToken]
         public ActionResult ArchiveConfirmed(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Cube cube = service.Find((int)id);
+            if (cube == null)
+            {
+                return HttpNotFound();
+            }
+
+            cube.Weight *= -1;
+
+            service.Edit(cube);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost, ActionName("DetailsInactive")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ArchiveConfirmedx(int? id)
         {
             if (id == null)
             {
