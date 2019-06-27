@@ -94,7 +94,7 @@ namespace EntityFrameworkExample.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Weight,Radius,Height,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Cube cube)
+        public ActionResult Edit([Bind(Include = "Id,Weight,SideLength,ConstructionMaterial,Contents,CurrentLocation,DateCreated")] Cube cube)
         {
             if (ModelState.IsValid)
             {
