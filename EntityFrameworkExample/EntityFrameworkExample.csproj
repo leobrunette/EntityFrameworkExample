@@ -173,6 +173,7 @@
     <Content Include="Images\cubeLogo.png" />
     <Content Include="Images\Diamond.png" />
     <Content Include="Images\Iron.png" />
+    <Content Include="Images\Obsidian.png" />
     <Content Include="Images\Stone.png" />
     <Content Include="Images\Wood.png" />
     <Content Include="Scripts\bootstrap.js" />
