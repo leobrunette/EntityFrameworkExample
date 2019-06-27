@@ -1,7 +1,7 @@
 ﻿@model EntityFrameworkExample.Models.Barrel
 
 @{
-	ViewBag.Title = "Add";
+    ViewBag.Title = "Add";
 }
 
 	<div class="row">
@@ -114,55 +114,76 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="form-group dynamic-element" style="display:none">
-            @Html.LabelFor(model => model.Contents, htmlAttributes: new { @class = "control-label col-md-2" })
+
+    <!--Start-->
+    @Html.LabelFor(model => model.Contents, htmlAttributes: new { @class = "control-label col-md-2" })
+
+    <div class="row" id="content1">
+        <div class="form-group dynamic-element">
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Contents, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Contents, "", new { @class = "text-danger" })
+                <input class="form-control" name="contents" id="input1" />
             </div>
-            <p class="delete">Remove Contents</p>
+        </div>
+        <div class="row" id="add1">
+            <p onclick="showContents(2),hideAdd(1)">Add more Contents</p>
         </div>
     </div>
-    <div class="form-container">
-        <form class="form-horizontal">
-            <fieldset>
-                <div class="dynamic-stuff">
-                    <!-- Dynamic element will be cloned here -->
-                    <!-- You can call clone function once if you want it to show it a first element-->
-                </div>
 
-                <!-- Button -->
-                <div class="form-group">
-                    <div class="row">
-                            <p class="add-one">Add Contents</p>
-                        <div class="col-md-5"></div>
-                        <div class="col-md-6">
-                            <button class="button button-sm">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
+    <div class="row" id="content2">
+        <div class="form-group dynamic-element">
+            <div class="col-md-10">
+                <input class="form-control" id="input2" />
+                <p id="delete2" onclick="hideContents(2),showAdd(1)">Remove Contents</p>
+            </div>
+        </div>
+        <div class="row" id="add2">
+            <p onclick="showContents(3),hideAdd(2)">Add more Contents</p>
+        </div>
     </div>
-	}
+
+    <div class="row" id="content3">
+        <div class="form-group dynamic-element">
+            <div class="col-md-10">
+                <input id="input3" class="form-control" />
+                <p id="delete2" onclick="hideContents(2),showAdd(1)">Remove Contents</p>
+            </div>
+        </div>
+        <div class="row" id="add3">
+            <p onclick="showContents(4),hideAdd(3)">Add more Contents</p>
+        </div>
+    </div>
+    <div class="row" id="content4">
+        <div class="form-group dynamic-element">
+            <div class="col-md-10">
+                <input id="input4" class="form-control" />
+                <p id="delete2" onclick="hideContents(4),showAdd(3)">Remove Contents</p>
+            </div>
+        </div>
+        <div class="row" id="add4">
+            <p onclick="showContents(5),hideAdd(4)">Add more Contents</p>
+        </div>
+    </div>
+    <div class="row" id="content5">
+        <div class="form-group dynamic-element">
+            <div class="col-md-10">
+                <input id="input5" class="form-control" />
+                <p id="delete2" onclick="hideContents(5),showAdd(4)">Remove Contents</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--End-->
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-12">
+            <input onclick="submitt()" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+    }
+</div>
 
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script>
-   //Clone the hidden element and shows it
-    $('.add-one').click(function () {
-       $('.dynamic-element').first().clone().appendTo('.dynamic-stuff').show();
-       attach_delete();
-   });
-
-
-   //Attach functionality to delete buttons
-   function attach_delete() {
-       $('.delete').off();
-       $('.delete').click(function () {
-           console.log("click");
-           $(this).closest('.form-group').remove();
-       });
-   }
-</script>
 

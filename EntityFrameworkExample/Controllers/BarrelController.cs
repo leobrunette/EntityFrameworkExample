@@ -65,7 +65,7 @@ namespace EntityFrameworkExample.Controllers
             {
                 service.Create(barrel);
 
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
             }
 
             return View(barrel);
