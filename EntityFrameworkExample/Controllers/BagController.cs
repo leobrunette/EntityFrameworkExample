@@ -54,7 +54,19 @@ namespace EntityFrameworkExample.Controllers
             return View();
         }
 
-
+        public ActionResult DetailsInactive(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Bag barrel = service.FindInactive((int)id);
+            if (barrel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(barrel);
+        }
 
         // POST: Bags/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 

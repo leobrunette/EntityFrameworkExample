@@ -55,5 +55,7 @@ namespace EntityFrameworkExample.service
             bar.Weight *= -1;
             return bar;
         }
+
+
     }
 }
