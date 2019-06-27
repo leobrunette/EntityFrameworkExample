@@ -4,14 +4,14 @@
     ViewBag.Title = "Index";
 }
 <div class="row">
-    <div class="col-sm-7">
-        <h1>All Barrels</h1>
+    <div class="col-sm-5">
+        <h1>All Cubes</h1>
     </div>
-    <div class="col-sm-4">
-        
+    <div class="col-sm-6">
+        @Html.ActionLink("All Barrels", "Index", "Barrel", null, new { @class = "button button-nav button-sm" })
     </div>
     <div class="col-sm-1">
-        <img src="~/Images/barrel2.png" width="100" height="95" align="right"/>
+        <img src="~/Images/crateLogo.png" width="80" height="75" align="right"/>
     </div>
 </div>
     <div class="row">
@@ -26,7 +26,7 @@
 							Weight
 						</th>
 						<th>
-							SideLength
+							Side Length
 						</th>
 						<th>
 							Contents
