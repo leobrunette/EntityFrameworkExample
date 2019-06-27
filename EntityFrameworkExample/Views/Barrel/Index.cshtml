@@ -19,76 +19,88 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <table class="table">
-                <tr>
-                    <th>
-                        ID
-                    </th>
-                    <th>
-                        Weight
-                    </th>
-                    <th>
-                        Radius
-                    </th>
-                    <th>
-                        Height
-                    </th>
-                    <th>
-                        Contents
-                    </th>
-                    <th>
-                        Current Location
-                    </th>
-                    <th>
-                        Construction Materials
-                    </th>
-                    <th>
-                        Date Created
-                    </th>
-                    <th>
-                    </th>
-                </tr>
-                @foreach (var item in Model)
-                {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Weight)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Radius)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Height)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Contents)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CurrentLocation)
-                    </td>
-					<td>
-						@if (item.ConstructionMaterial != null)
-						{
-							<img src="@item.ConstructionMaterial" alt="@item.ConstructionMaterial" width="10%" />
+            <table id="dataTable" class="table">
+				<thead>
+					<tr>
+						<th>
+							ID
+						</th>
+						<th>
+							Weight
+						</th>
+						<th>
+							Radius
+						</th>
+						<th>
+							Height
+						</th>
+						<th>
+							Contents
+						</th>
+						<th>
+							Current Location
+						</th>
+						<th>
+							Construction Materials
+						</th>
+						<th>
+							Date Created
+						</th>
+						<th>
+							Links
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+					<tr>
+						<td>
+							@Html.DisplayFor(modelItem => item.Id)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Weight)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Radius)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Height)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Contents)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.CurrentLocation)
+						</td>
+						<td>
+							@if (item.ConstructionMaterial != null)
+							{
+								<img src="@item.ConstructionMaterial" alt="@item.ConstructionMaterial" width="10%" />
+							}
+							else
+							{
+								@Html.DisplayFor(modelItem => item.ConstructionMaterial)
+							}
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.DateCreated)
+						</td>
+						<td>
+							@Html.ActionLink("Edit", "Edit", new { id = item.Id }) | 
+							@Html.ActionLink("Details", "Details", new { id = item.Id })
+						</td>
+					</tr>
 						}
-						else
-						{
-							@Html.DisplayFor(modelItem => item.ConstructionMaterial)
-						}
-					</td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DateCreated)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) | 
-                        @Html.ActionLink("Details", "Details", new { id = item.Id })
-                    </td>
-                </tr>
-                    }
+				</tbody>
             </table>
         </div>
     </div>
+<script>
+	$(document).ready(function() {
+    $('#dataTable').DataTable( {
+        "order": [[ 3, "desc" ]]
+    } );
+} );
+</script>
 
