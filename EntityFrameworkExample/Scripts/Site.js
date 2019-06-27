@@ -26,11 +26,6 @@ $(document).on('submit', function () {
 
 });
 function submitt() {
-    alert($('#input' + 1).val() +', '+
-        $('#input' + 2).val() + ', ' +
-        $('#input' + 3).val() + ', ' +
-        $('#input' + 4).val() + ', ' +
-        $('#input' + 5).val());
     $('#input' + 1).val($('#input' + 1).val() + ', ' +
         $('#input' + 2).val() + ', ' +
         $('#input' + 3).val() + ', ' +
