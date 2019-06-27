@@ -17,6 +17,10 @@ namespace EntityFrameworkExample.Controllers
         {
             return (Index(true));
         }
+        public ActionResult IndexInactive()
+        {
+            return (Index(false));
+        }
         [HttpPost]
         public ActionResult Index(bool active)
         {
